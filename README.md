@@ -16,7 +16,7 @@ Things that are not implemented/supported:
  * Using the time packets to set the system time. 
  * Automatic decompression of received files. Previously, most files sent by
    the Othernet broadcast were `.tar.bz2` files. `ondd` extracts those files
-   automatically. Othernet no longer sends .tar.bz2 files. 
+   automatically. 
 
 ## Dependencies
 
