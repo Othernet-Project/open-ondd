@@ -15,9 +15,9 @@
 # the Free Software Foundation, Inc., 51 Franklin Street,
 # Boston, MA 02110-1301, USA.
 
-"""Outernet file service receiver
+"""Othernet file service receiver
 
-Receives files in the Outernet service and saves them to disk
+Receives files in the Othernet service and saves them to disk
 """
 
 __author__ = 'Daniel Estevez'
@@ -38,7 +38,7 @@ import binascii
 
 class FileService:
     """
-    Packet handler for Outernet file service
+    Packet handler for Othernet file service
 
     Gets packets from LDPRouter() and handles file reconstruction
     using the File() class
