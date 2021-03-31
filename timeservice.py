@@ -15,9 +15,9 @@
 # the Free Software Foundation, Inc., 51 Franklin Street,
 # Boston, MA 02110-1301, USA.
 
-"""Outernet time service receiver
+"""Othernet time service receiver
 
-Receives time packets in the Outernet service
+Receives time packets in the Othernet service
 """
 
 __author__ = 'Daniel Estevez'
@@ -32,7 +32,7 @@ import struct
 
 class TimeService:
     """
-    Packet handler for Outernet time service
+    Packet handler for Othernet time service
 
     Gets time packets from LDPRouter() and prints them
     """
