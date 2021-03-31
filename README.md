@@ -1,47 +1,35 @@
-# free-outernet
-Free Software Outernet receiver
+# open-ondd 
+an open source file decoder for the Othernet data broadcast
 
-This is a Free Software (Open Source) receiver for
-[Outernet](http://outernet.is/) designed to work with the
-[gr-outernet](https://github.com/daniestevez/gr-outernet) GNUradio Outernet
-receiver modem. The key parts of the official Outernet receiver software, `ondd`
-and `sdr100` are closed-source, distributed as binaries only. This project aims
-to provide a Free Software alternative to `ondd`, while
-[gr-outernet](https://github.com/daniestevez/gr-outernet) can be used a a
-substitute for `sdr100`.
+This is an open source file decoder for [Othernet](http://othernet.is/) which aims to provide an open source alternative to `ondd`.
 
-With free-outernet and gr-outernet you can receive the files that are broadcast
-by Outernet file service and the time packets that are broadcast by the Outernet
+With open-ondd you can receive the files that are broadcast by the Othernet file broadcast service and the time packets that are broadcast by the Othernet
 time service.
 
-All this software is the result of a reverse engineering effort, since Outernet
-does not publish any documentation for the protocols they use.
+This software is the result of a third-party reverse-engineering effort: https://github.com/daniestevez/free-outernet
 
-You can use `free-outernet.py` to receive UDP packets in real-time from
-gr-outernet or with a KISS file recorded previously by
-gr-outernet. `free-outernet.py` recovers the files that are transmitted by
-Outernet and prints the time packets. It also prints some interesting debug info.
+`open-ondd.py` receives UDP packets in real-time from a designated UDP port.  `open-ondd.py` recovers the files and time packets that are transmitted by
+Othernet and relayed over UDP. It also prints some interesting debug info.
 
 
 Things that are not implemented/supported yet:
 
- * X.509 signature checking. The file announcements of the Outernet file service
-   are signed with the Outernet X.509 certificate to prevent spoofing. This will
+ * X.509 signature checking. The file announcements of the Othernet file service
+   are signed with the Othernet X.509 certificate to prevent spoofing. This will
    not be implemented, as I have no interest in checking the signature. Perhaps
-   some Amateur Radio operators or other people whish to use the Outernet
+   some Amateur Radio operators or other people whish to use the Othernet
    protocols to exchange files, so it does not make sense for me to require
    that file announcements are signed.
  * Using the time packets to set the system time. I do not know how useful it
-   is for most people. `ondd` does it, because it is designed to run standanlone
+   is for most people. `ondd` does it, because it is designed to run standalone
    without internet conetivity. If you have Internet connectivity it is much
    better to use NTP. If you do not have Internet connectivity and/or your need
-   precise timing, it is better to use GPS. The Outernet time service only has a
+   precise timing, it is better to use GPS. The Othernet time service only has a
    resolution of 1 second and it does not seem to account for round trip time to
    geostationary orbit (around 200ms).
- * Automatic decompression of received files. Most (perhaps all) files sent by
-   the Outernet file service are `.tar.bz2` files. `ondd` extracts the files
-   automatically. This is easy to implement, but it is low on my priority list,
-   as it is very easy to do this manually.
+ * Automatic decompression of received files. Previously, most (perhaps all) files sent by
+   the Othernet file service were `.tar.bz2` files. `ondd` extracts the files
+   automatically. Othernet no longer sends .tar.bz2 files. 
 
 ## Dependencies
 
