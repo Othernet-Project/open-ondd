@@ -16,7 +16,7 @@
 # Boston, MA 02110-1301, USA.
 #
 
-"""Outernet OP and LDP protocols"""
+"""Othernet OP and LDP protocols"""
 
 __author__ = 'Daniel Estevez'
 __copyright__ = 'Copyright 2016, Daniel Estevez'
@@ -31,9 +31,9 @@ from crcmod.predefined import PredefinedCrc
 
 class OP:
     """
-    Outernet Protocol (OP) packet
+    Othernet Protocol (OP) packet
 
-    OP is the L3 protocol of Outernet
+    OP is the L3 protocol of Othernet
     """
     __header_len = 5
 
