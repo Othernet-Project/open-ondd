@@ -164,7 +164,7 @@ class OPDefragmenter:
             if not ldp.frag_count:
                 ldp.frag_count = packet.last_fragment + 1
             ldp.next_index = packet.fragment_index + 1
-            ldp.push_data(packet.fragment_index, packet.payload)
+            ldp.push_data(packet.fragment_index, packet.payload + b'\x00' * (ldp.frag_size - len(packet.payload) - 1))
             if packet.fragment_type == 0x3c and ldp.complete:
                 decoded = ldp.decode()
                 ldp.reset()
